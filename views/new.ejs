@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Fruit Page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.css">
+    <title>Document</title>
 </head>
 <body>
-  <h1>New Fruit Page</h1>
-  <form action="/fruits", method="POST">
-    Name: <input type="text" name="name">
-    Color: <input type="text" name="color">
-    Is Ready To Eat: <input type="checkbox" name="readyToEat"> <br>
-    <input type="submit" value="Create Fruit">
-  </form>
+    <div class="container">
+        <h1>New Movies</h1>
 
-  <nav>
-    <a href="/fruits">Back to Fruits Index</a>
-  </nav>
-  
+        <form action="/yvideos" method="POST">
+            Title:<br/>
+             <input type="text" name="title"/><br/>
+            Description:<br/>
+             <textarea name="description"></textarea><br/>
+            Image Link:<br/> 
+            <input type="text" name="img"/><br/>
+            Video Link:<br/> 
+            <input type="text" name="video"/><br/>
+            Likes:<br/> 
+            <input type="number" name="likes" /><br/>
+            Subscribers:<br/>
+            <input type="number" name="subscribers" /><br/>
+            <br/>
+            <input type="submit" value="Add Items" />
+        </form>
+    </div>
+    
 </body>
 </html>

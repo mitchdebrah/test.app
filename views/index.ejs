@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fruits Index Page</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Document</title>
 </head>
 <body>
-  <h1>Fruits Index Page</h1>
-  <nav>
-    <a href="/fruits/new">Creat a New Fruit</a>
-  </nav>
-  <ul>
-    <% for(let i = 0; i < fruits.length; i++) { %>
-        <li>
-            The <a href="/fruits/<%= fruits[i].id %>"><%= fruits[i].name %></a> is  <%=fruits[i].color %>.
-            <% if ( fruits[i].readyToEat === true ) { %>
-                It is ready to eat
-            <% } else { %>
-                It is not ready to eat
+    <div class="container">
+    <h1>Videos Index</h1>
+    <div class="container">
+       
+         <a href="/yvideos/new"><button>Add A New Product</button></a>
+
+        <table> 
+            <% for(let i = 0; i < yvideos.length; i++) { %>
+            <tr>
+                <td>
+                    </td>
+                         <form
+                            action="/yvideos" method="POST">
+                            <br>
+                        <h4>Video:<a class="tomato" href="/yvideos/<%= yvideos[i].id %>">
+                            <%= yvideos[i].title %>
+                        </a><br>
+                        Likes: <em>$<%= yvideos[i].likes %></em><br>
+                        Subscribers <%= yvideos[i].subscribers %>
+                    </h4>
+                    <a href="/yvideos/<%= yvideos[i].id %>"></a>
+                        <img src="<%= yvideos[i].img %>"  height="270px">
+                        <img src="<%= yvideos[i].video %>">
+                    </form>
+            </tr>
             <% } %>
-            <a href="/fruits/<%= fruits[i].id %>/edit">Edit</a>
-            <form action="/fruits/<%= fruits[i].id %>?_method=DELETE" method="post">
-              <input type="submit" value="DELETE">
-            </form>
-        </li>
-    <% } %>
-</ul>
+        </table> 
+
+    </div>
 </body>
 </html>

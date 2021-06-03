@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fruits Show Page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.css">
+    <title>Document</title>
 </head>
 <body>
-  <h1>Fruits Show Page</h1>
-  The <%=fruit.name %> is  <%=fruit.color %>.
-        <% if(fruit.readyToEat === true){ %>
-            It is ready to eat
-        <% } else { %>
-            It is not ready to eat
-        <% } %>
-  <nav>
-      <a href="/fruits">Back to Fruits Index</a>
-  </nav>
-  
+    <div class="container">
+        <h1><%= yvideo.name %></h1>
+
+        <img src="<%= yvideo.img %>"  height="270px"/>
+        <br/><br/>
+        <%= yvideo.description %>
+        <br/><br/>
+        <% if (yvideo.qty === 0) { %>
+            ITEM OUT OF STOCK <br>
+            <% } else { %> 
+                The store has <em><%= yvideo.qty %></em> on sale for: <em>$<%= yvideo.price %>.</em>
+                
+                <form action="/yvideos/buy/<%= yvideo.id %>?_method=PUT&qty=<%= yvideo.qty %>" method="POST"><br>
+                    <input type="submit" value="Buy"/>
+                </form>
+            <% } %><br>
+
+        <a href="/yvideos/<%= yvideo.id %>/edit"><button>Edit</button></a><br/><br>
+        
+        <form action="/yvideos/<%=yvideo.id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete"/>
+            
+        </form><br>
+        <a href="/yvideos"><button type="submit">Return to yvideo Index</button></a>
+    </div>
 </body>
 </html>

@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Fruit</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.css"/>
+    <title>Document</title>
 </head>
 <body>
-  <h1>Edit Fruit Page</h1>
-  <form action="/fruits/<%= fruit.id %>?_method=PUT" method="post">
-    Name: <input type="text" name="name" id="name" value="<%= fruit.name %>">
-    Color: <input type="text" name="color" id="color" value="<%= fruit.color %>">
-    Is Ready To Eat:
-    <input type="checkbox" name="readyToEat" id="readyToEat"
-      <% if (fruit.readyToEat === true) { %>
-        checked
-      <% } %>
-    />
-    <input type="submit" value="Edit Fruit">
-  </form>
-  
+    <div class="container">
+        <h1>Edit <%= yvideo.title %></h1>
+
+        <form action="/yvideos/<%= yvideo.id %>?_method=PUT" method="POST">
+          Title: <br>
+            <input type="text" name="name" value="<%= yvideo.title %>"/><br>
+            Description: <br>
+            <textarea name="description"><%= yvideo.description %></textarea><br />
+            Image Link: <br>
+            <input type="text" name="img" value="<%= yvideo.img %>"/><br />
+            Video Link: <br>
+            <input type="text" name="img" value="<%= yvideo.video %>"/><br />
+            likes: <br>
+            <input type="number" name="price" value="<%= yvideo.likes %>"/><br />
+            Subscribers: <br>
+            <input type="number" name="qty" value="<%= yvideo.subscribers %>"/><br />
+            <br>
+            <input type="submit" value="Edit Inventory" />
+        </form>
+    </div>
+    
 </body>
 </html>
