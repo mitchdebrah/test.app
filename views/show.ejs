@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1><%= bird.name %></h1>
+      <h1><%= bird.name %></h1>
 
-        <img src="<%= bird.img %>"  height="270px"/>
-        <br/><br/>
-        <%= bird.description %>
-        <br/><br/>
-        <% if (bird.population === 0) { %>
-            <br>
-            <% } else { %> 
-                The current population of <strong><%= bird.name %></strong> is: <em><%= bird.population %></em> 
-                
-                <form action="/birds/buy/<%= bird.id %>?_method=PUT&qty=<%= bird.qty %>" method="POST"><br>
-                    
-                </form>
-            <% } %><br>
+      <img src="<%= bird.img %>" height="270px" />
+      <br /><br />
+      <%= bird.description %>
+      <br /><br />
+      <% if (bird.population === 0) { %>
+      <br />
+      <% } else { %> The current population of<strong><%= bird.name %></strong> is: <em><%= bird.population %></em>
 
-        <a href="/birds/<%= bird.id %>/edit"><button>Edit Entry</button></a><br/><br>
-        
-        <form action="/birds/<%=bird.id%>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete Entry"/>
-            
-        </form><br>
-        <a href="/birds"><button type="submit">Return to Bird Index</button></a>
+      <form
+        action="/birds/buy/<%= bird.id %>?_method=PUT&qty=<%= bird.qty %>"
+        method="POST"
+      >
+        <br />
+      </form>
+      <% } %><br />
+
+      <a href="/birds/<%= bird.id %>/edit"><button>Edit Entry</button></a
+      ><br /><br />
+
+      <form action="/birds/<%=bird.id%>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Entry" />
+      </form>
+      <br />
+      <a href="/birds"><button type="submit">Return to Bird Index</button></a>
     </div>
-</body>
+  </body>
 </html>
