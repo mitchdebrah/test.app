@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Document</title>
+</head>
+<body>
+  
+    <h1>Endangered Bird Species Index</h1>
+    <div class="container">
+       
+         <a href="/birds/new"><button>Add A New Bird Species</button></a> 
+
+        <table> 
+            <% for(let i = 0; i < birds.length; i++) { %>
+            <tr>
+                <td>
+                    </td>
+                         <form
+                            action="/birds" method="POST">
+                            <br>
+                        <h4>Bird Breed:<a class="tomato" href="/birds/<%= birds[i].id %>">
+                            <%= birds[i].name %>
+                        </a><br>
+                        Population: <em><%= birds[i].population %></em><br>
+                        Native: <%= birds[i].native %>
+                    </h4>
+                    <a href="/birds/<%= birds[i].id %>"></a>
+                        <img src="<%= birds[i].img %>"  height="300px" width="300">
+                    </form>
+            </tr>
+            <% } %> <br><br><br><br>
+
+           Please click the button to take a survey: <a href="/birds/survey"><button> Take A Survey</button></a>
+        </table> 
+
+    </div>
+</body>
+</html>
