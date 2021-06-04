@@ -60,11 +60,3 @@ router.put('/birds/:id', (req, res) => {
     });
 });
 
-//buy
-router.put('/birds/buy/:id', (req, res) => {
-    Birdes.findByIdAndUpdate(req.params.id, {population:req.query.population-1}, {new:true}, (err, showItems) => {
-        res.redirect('/birds/' + req.params.id);
-    });
-});
-
-module.exports = router;
