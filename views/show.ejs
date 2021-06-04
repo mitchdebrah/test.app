@@ -17,7 +17,7 @@
       <br /><br />
       <% if (bird.population === 0) { %>
       <br />
-      <% } else { %> The current population of<strong><%= bird.name %></strong> is: <em><%= bird.population %></em>
+      <% } else { %> The current population of<strong><%= bird.name %>:</strong> <em><%= bird.population %></em>
 
       <form
         action="/birds/buy/<%= bird.id %>?_method=PUT&qty=<%= bird.qty %>"
