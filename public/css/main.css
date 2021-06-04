@@ -1,8 +1,11 @@
-
-
-    
-
-    
-    
+body {
+  background-color: rgb(167, 166, 166);
+  background-size: 100px;
+  display: grid;
+  background: rgb(199, 198, 198);
+  padding:1em;
+  box-shadow: 1px 1px 10px rgb(38, 41, 41), -1px -1px 10px rgb(33, 58, 54),
+    1px -1px 10px rgb(121, 200, 228), -1px 1px 10px rgb(52, 45, 45); 
+}
 
 
